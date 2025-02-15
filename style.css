@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background: linear-gradient(#90E0EF, #00B4D8, #0077B6) ;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.title{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.title h1{
+  color: #fb5607;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 3rem;
+}
+
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 90vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  margin: 5vh auto;
+}
+
+.form-container .merchandise-carousel{
+  background-color: #023e8a;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.merchandise-carousel .carousel-slider{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.carousel-slider img{
+  position: absolute;
+  object-fit: cover;
+  opacity: 0;
+  top: 80%;
+  transform: translateY(10%);
+}
+
+.carousel-slider img.active{
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.merchandise-carousel i{
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  color: #ffd60a;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.merchandise-carousel i.fa-chevron-left{
+  left: 1rem;
+}
+
+.merchandise-carousel i.fa-chevron-right{
+  right: 1rem;
+}
+
+.form-container .form-info{
+  background-color: #CAF0F8;
+  height: 100%;
+  width: 50%;
+}
+
+.form-info form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-info form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+}

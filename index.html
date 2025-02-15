@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merch Signings</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="images/psych.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="title">
+    <h1>Psych Merch Signings</h1>
+  </div>
+  <section class="form-container">
+    <div class="merchandise-carousel">
+      <i class="fa-solid fa-chevron-left" id="prevBtn" style="display: none;"></i>
+      <i class="fa-solid fa-chevron-right" id="nextBtn"></i>
+      <div class="carousel-slider">
+        <img src="images/shirt-front-view.png" class="shirt-front-view active"alt="">
+        <img src="images/shirt-back-view.png" class="shirt-back-view" alt="">
+      </div>
+    </div>
+
+    <div class="form-info">
+      <form method="post" action="https://www.foo.com/">
+        <fieldset>
+          <label for="name">
+            Name:
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </label>
+          <label for="Email ID">
+            Email ID:
+            <input type="email" id="email" name="email" placeholder="Enter your BITS Email ID" required>
+          </label>
+          <label for="Phone Number">
+            Phone Number:
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </label>
+          <label for="BITS ID">
+            BITS ID:
+            <input type="text" id="bits-id" name="bits-id" placeholder="Enter your BITS ID" required>
+          </label>
+        </fieldset>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </section>
+</body>
+</html>
