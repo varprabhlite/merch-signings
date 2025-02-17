@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="title">
-    <h1>Psych Merch Signings</h1>
+    <h1>Lite Merch Signings</h1>
   </div>
   <section class="form-container">
     <div class="merchandise-carousel">
@@ -24,7 +24,7 @@
 
     <div class="form-info">
       <form method="post" action="https://www.foo.com/">
-        <fieldset>
+        <fieldset class="unique-info">
           <label for="name">
             Name:
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -34,13 +34,47 @@
             <input type="email" id="email" name="email" placeholder="Enter your BITS Email ID" required>
           </label>
           <label for="Phone Number">
-            Phone Number:
+            Phone No.:
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
           </label>
           <label for="BITS ID">
             BITS ID:
             <input type="text" id="bits-id" name="bits-id" placeholder="Enter your BITS ID" required>
           </label>
+        </fieldset>
+          
+        <fieldset>
+          <label for="hostel">
+            Hostel:
+            <select name="hostel-name" id="hostel-name" required>
+              <option value="ashok">Ashok Bhawan</option>
+              <option value="bhagirath">Bhagirath Bhawan</option>
+              <option value="budh">Budh Bhawan</option>
+              <option value="cvr">CVR Bhawan</option>
+              <option value="gandhi">Gandhi Bhawan</option>
+              <option value="krishna">Krishna Bhawan</option>
+              <option value="malviya">Malviya Bhawan</option>
+              <option value="meera">Meera Bhawan</option>
+              <option value="ram">Ram Bhawan</option>
+              <option value="ranapratap">Ranapratap Bhawan</option>
+              <option value="shankar">Shankar Bhawan</option>
+              <option value="sr">SR Bhawan</option>
+              <option value="vishwakarma">Vishwakarma Bhawan</option>
+              <option value="vyas">Vyas Bhawan</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset class="size-select">
+          <img src="images/size-guide.png" alt="">
+          <div class="sizes-container">
+            <label for="s"><input type="radio" name="size" id="s" value="s" class="size-inline">S</label>
+            <label for="m"><input type="radio" name="size" id="m" value="m" class="size-inline" checked>M</label>
+            <label for="l"><input type="radio" name="size" id="l" value="l" class="size-inline">L</label>
+            <label for="xl"><input type="radio" name="size" id="xl" value="xl" class="size-inline">XL</label>
+            <label for="2xl"><input type="radio" name="size" id="2xl" value="2xl" class="size-inline">2XL</label>
+            <label for="3xl"><input type="radio" name="size" id="3xl" value="3xl" class="size-inline">3XL</label>
+          </div>
         </fieldset>
       </form>
     </div>
