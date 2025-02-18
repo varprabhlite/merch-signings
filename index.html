@@ -23,24 +23,28 @@
     </div>
 
     <div class="form-info">
-      <form method="post" action="https://www.foo.com/">
+      <form method="post" action="https://www.foo.com/" id="merch-form">
         <fieldset class="unique-info">
           <label for="name">
             Name:
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
           </label>
+          <span class="error" id="nameError"></span>
           <label for="Email ID">
             Email ID:
             <input type="email" id="email" name="email" placeholder="Enter your BITS Email ID" required>
           </label>
+          <span class="error" id="emailError"></span>
           <label for="Phone Number">
             Phone No.:
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
           </label>
+          <span class="error" id="phoneError"></span>
           <label for="BITS ID">
             BITS ID:
             <input type="text" id="bits-id" name="bits-id" placeholder="Enter your BITS ID" required>
           </label>
+          <span class="error" id="bitsIdError"></span>
         </fieldset>
           
         <fieldset>
@@ -66,7 +70,7 @@
         </fieldset>
 
         <fieldset class="size-select">
-          <img src="images/size-guide.png" alt="">
+          <img src="images/size-guide.png" alt="size-guide-for-t-shirt">
           <div class="sizes-container">
             <label for="s"><input type="radio" name="size" id="s" value="s" class="size-inline">S</label>
             <label for="m"><input type="radio" name="size" id="m" value="m" class="size-inline" checked>M</label>
@@ -76,6 +80,17 @@
             <label for="3xl"><input type="radio" name="size" id="3xl" value="3xl" class="size-inline">3XL</label>
           </div>
         </fieldset>
+
+        <fieldset class="final">
+          <label for="terms-and-conditions" class="terms-and-conditions">
+            <input type="checkbox" id="terms-and-conditions-box" name="terms-and-conditions-box " required>
+            I Agree to the Terms and Conditions.
+          </label>
+          <div class="buttons">
+            <button type="submit" class="submit-button">Submit</button>
+            <button type="reset" class="reset-button">Reset</button>
+          </div>
+          <p class="success" id="order-success">Order received successfully.</p>
       </form>
     </div>
     <script src="script.js"></script>
