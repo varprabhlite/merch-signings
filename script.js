@@ -87,7 +87,7 @@ form.addEventListener("submit", (event) => {
 
     localStorage.setItem("formData", JSON.stringify(formData));
 
-    fetch("http://www.foo.com/", {
+    fetch("https://www.foo.com/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
