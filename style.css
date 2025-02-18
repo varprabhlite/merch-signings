@@ -1,15 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/ankh-sanctuary');
 
-*{
+* {
   margin: 0;
   padding: 0;
-  border: border-box;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  background: linear-gradient(#90E0EF, #00B4D8, #0077B6) ;
-  height: 100vh;
+body {
+  background: linear-gradient(#90E0EF, #00B4D8, #0077B6);
+  min-height: 100vh;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -17,163 +17,164 @@ body{
   padding-bottom: 2rem;
 }
 
-.title{
+.title {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 2vh;
 }
 
-.title h1{
+.title h1 {
   color: #540b0e;
   font-family: 'Ankh Sanctuary', sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
 }
 
-.form-container{
+.form-container {
   display: flex;
-  align-items: center;
+  align-items: stretch; 
   justify-content: center;
   width: 80vw;
-  height: 100%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.6);
-  margin:auto;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  background-color: #CAF0F8;
+  border-radius: 8px;
+  overflow: visible;
 }
 
-.form-container .merchandise-carousel{
+.merchandise-carousel {
   background-color: #023e8a;
   position: relative;
-  height: 100%;
   width: 50%;
   overflow: hidden;
+  border-radius: 8px 0 0 8px;
 }
 
-.merchandise-carousel .carousel-slider{
-  position: relative;
+.carousel-slider {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  position: relative;
+  height: 100%;
 }
 
-.carousel-slider img{
-  position: absolute;
-  object-fit: cover;
+.carousel-slider img {
+  width: 80%;
+  height: auto;
   opacity: 0;
-  top: 80%;
-  transform: translateY(10%);
+  transition: opacity 0.2s;
+  position: absolute;
 }
 
-.carousel-slider img.active{
+.carousel-slider img.active {
   opacity: 1;
-  transition: opacity 0.5s;
+  height: 500px;
+  width: auto;
 }
 
-.carousel-slider .shirt-front-view{
-  height: 511px;
-}
-
-.merchandise-carousel i{
-  z-index: 2;
+.merchandise-carousel i {
   position: absolute;
   top: 50%;
   font-size: 2rem;
   color: #ffd60a;
   cursor: pointer;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
-.merchandise-carousel i.fa-chevron-left{
+.merchandise-carousel i.fa-chevron-left {
   left: 1rem;
 }
 
-.merchandise-carousel i.fa-chevron-right{
+.merchandise-carousel i.fa-chevron-right {
   right: 1rem;
 }
 
-.form-container .form-info{
-  background-color: #CAF0F8;
-  height: 100%;
+.form-info {
   width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .error {
   color: red;
   font-size: 0.8rem;
-  display:none;
+  display: none;
   margin: 0.2rem auto;
 }
 
-.success{
+.success {
   color: green;
   font-size: 0.8rem;
-  display:none;
+  display: none;
   margin: 0.2rem auto;
 }
 
-.form-info form fieldset {
+form fieldset {
   display: flex;
   flex-direction: column;
-  margin: 0.8rem;
+  margin: 0.8rem 0;
+  border: none;
 }
 
-.form-info form label {
+form label {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(0.8rem, 1vw, 1.2rem);
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.form-info form input{
+form input,
+form select {
   border: none;
   width: 75%;
   padding: 5px;
 }
 
-.form-info form select{
-  border: none;
-  width: 75%;
-  padding: 5px;
-}
-
-.form-info form img{
+form img {
   width: 50%;
   height: auto;
   margin: auto;
 }
 
-.form-info form .size-select{
+.size-select {
   min-width: 200px;
 }
 
-.form-info form .sizes-container{
+.sizes-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 1rem;
   font-size: clamp(0.5rem, 1vw, 1.2rem);
 }
 
-.form-info form .final .buttons{
+.final .buttons {
   display: flex;
   justify-content: space-around;
   margin: 0.5rem 20%;
 }
 
-.form-info form .final .terms-and-conditions{
+.final .terms-and-conditions {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
   font-size: clamp(0.8rem, 1vw, 1.2rem);
   margin-top: 0.5rem;
 }
 
-.form-info form .final #terms-and-conditions-box{
+#terms-and-conditions-box {
   width: 2rem;
 }
 
-.form-info form .final button{
+.final button {
   width: 30%;
   padding: 0.5rem;
   background-color: #023e8a;
@@ -181,48 +182,125 @@ body{
   border: none;
   cursor: pointer;
   border-radius: 0.25rem;
-} 
+}
 
-.form-info form .final .submit-button:hover{
+.final .submit-button:hover {
   background-color: #023e8aaa;
 }
 
-.form-info form .final .reset-button{
+.final .reset-button {
   background-color: #ffd60a;
   color: black;
   transition: 0.2s ease-in-out;
 }
 
-.form-info form .final .reset-button:hover{
+.final .reset-button:hover {
   background-color: #540b0e;
   color: white;
   transition: 0.2s ease-in-out;
 }
 
 @media (max-width: 1100px) {
-  body{
-    height: 100%;
-    padding: 0;
-  }
-
-  .form-container{
-    display: flex;
+  .form-container {
+    width: 90vw;
     flex-direction: column;
-    width: auto;
-    height: 100vh;
-    margin: 1rem 20vw;
   }
 
-  .form-container .merchandise-carousel,
-  .form-container .form-info {
-    width: 100%; 
-    height: 100%;
+  .merchandise-carousel,
+  .form-info {
+    width: 100%;
+  }
+
+  .merchandise-carousel i {
+    display: none !important;
+  }
+
+  .carousel-slider {
+    height: auto; 
   }
 
   .carousel-slider img {
-    width: 210px; 
-    position: absolute;
-    height: auto !important;
+    width: auto; 
+    height: 500px !important; 
     margin: auto;
+    position: static; 
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .merchandise-carousel,
+  .form-info {
+    width: 100%;
+  }
+
+  .merchandise-carousel i {
+    display: none !important;
+  }
+
+  .carousel-slider img {
+    height: 220px !important;
+    width: auto;
+    position: static;
+    opacity: 1;
+  }
+
+  form label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form input,
+  form select {
+    width: 100%;
+  }
+
+  .final .buttons {
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+
+  .final button {
+    width: 80%;
+    margin-bottom: 0.5rem;
+  }
+
+  .final .terms-and-conditions {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 1.5rem;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  form input,
+  form select {
+    padding: 8px;
+  }
+
+  .sizes-container label {
+    margin: 3px;
+  }
+
+  .final button {
+    padding: 8px 15px;
+  }
+
+  .sizes-container {
+    gap: 0.5rem;
   }
 }
