@@ -96,15 +96,21 @@ form.addEventListener("submit", (event) => {
       mode: "no-cors",
       body: JSON.stringify(formData),
     })
-      .then((fetchResponse) => {
-        console.log(fetchResponse);
-        form.reset();
-        successMessage.style.display = "block";
-        setTimeout(() => {
-          successMessage.style.display = "none";
-          form.reset();
-        }, 6000);
-      })
-      .catch((fetchError) => console.log(fetchError));
+    .then((fetchResponse) => {
+      console.log(fetchResponse);
+      form.reset();
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 6000);
+    })
+    .catch((fetchError) => {
+      console.log(fetchError);
+      form.reset();
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 6000);
+    });
   }
 });
