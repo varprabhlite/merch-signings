@@ -102,6 +102,7 @@ form.addEventListener("submit", (event) => {
         successMessage.style.display = "block";
         setTimeout(() => {
           successMessage.style.display = "none";
+          form.reset();
         }, 6000);
       })
       .catch((fetchError) => console.log(fetchError));
