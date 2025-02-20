@@ -14,6 +14,7 @@ const hostel = document.getElementById("hostel-name");
 const sizes = document.querySelectorAll(".size-inline");
 const termsAndConditions = document.getElementById("terms-and-conditions-box");
 const successMessage = document.getElementById("order-success");
+const multipleSubmissionError = document.getElementById("multiple-submissions-error");
 
 nextBtn.addEventListener("click", () => {
   frontView.classList.remove("active");
@@ -41,6 +42,13 @@ const clearError = (input) => {
   const errorSpan = input.parentNode.nextElementSibling;
   errorSpan.textContent = "";
   errorSpan.style.display = "none";
+};
+
+const hasUserSubmitted = (bitsID, email) => {
+  const submissions = JSON.parse(localStorage.getItem("submissions")) || {};
+  return (
+    submissions.hasOwnProperty(bitsID) || submissions.hasOwnProperty(email)
+  );
 };
 
 form.addEventListener("submit", (event) => {
@@ -75,6 +83,15 @@ form.addEventListener("submit", (event) => {
     clearError(bitsID);
   }
 
+  if (hasUserSubmitted(bitsID.value)) {
+    multipleSubmissionError.style.display = "block";
+    form.reset();
+    setTimeout(() => {
+      multipleSubmissionError.style.display = "none";
+    }, 6000);
+    isValid = false;
+  }
+
   if (isValid) {
     const formData = {
       name: nameInput.value,
@@ -85,7 +102,10 @@ form.addEventListener("submit", (event) => {
       size: document.querySelector('input[name="size"]:checked').value,
     };
 
-    localStorage.setItem("formData", JSON.stringify(formData));
+    const submissions = JSON.parse(localStorage.getItem("submissions")) || {};
+    submissions[bitsID.value] = formData;
+    submissions[email.value] = formData;
+    localStorage.setItem("submissions", JSON.stringify(submissions));
 
     fetch("https://www.foo.com/", {
       method: "POST",
@@ -102,7 +122,6 @@ form.addEventListener("submit", (event) => {
         successMessage.style.display = "block";
         setTimeout(() => {
           successMessage.style.display = "none";
-          form.reset();
         }, 6000);
       })
       .catch((fetchError) => console.log(fetchError));
