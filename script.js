@@ -17,17 +17,24 @@ const successMessage = document.getElementById("order-success");
 const multipleSubmissionError = document.getElementById("multiple-submissions-error");
 
 nextBtn.addEventListener("click", () => {
-  frontView.classList.remove("active");
-  backView.classList.add("active");
-  nextBtn.style.display = "none";
-  prevBtn.style.display = "block";
+  if(frontView.classList.contains("active")) {
+    frontView.classList.remove("active");
+    backView.classList.add("active");
+  }
+  else {
+    backView.classList.remove("active");
+    frontView.classList.add("active");
+  }
 });
 
 prevBtn.addEventListener("click", () => {
-  backView.classList.remove("active");
-  frontView.classList.add("active");
-  prevBtn.style.display = "none";
-  nextBtn.style.display = "block";
+  if(frontView.classList.contains("active")) {
+    frontView.classList.remove("active");
+    backView.classList.add("active");
+  } else {
+    backView.classList.remove("active");
+    frontView.classList.add("active");
+  }
 });
 
 const validate = (regex, value) => regex.test(value);
