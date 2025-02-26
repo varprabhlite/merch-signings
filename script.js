@@ -2,8 +2,8 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const frontView = document.querySelector(".shirt-front-view");
 const backView = document.querySelector(".shirt-back-view");
-const idRegex = /^\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)$/i;
-const emailRegex = /^(f|h)\d{8}@(pilani|goa|hyderabad)\.bits-pilani\.ac\.in$/i;
+const idRegex = /^(20(19|2[0-4]))[AB][1-8ABD](PS|TH)\d{4}(P|G|H)$/i;
+const emailRegex = /^[fh](20(19|2[0-4]))\d{4}@(pilani|goa|hyderabad)\.bits-pilani\.ac\.in$/i;
 const phoneRegex = /^\d{10}$/;
 const form = document.getElementById("merch-form");
 const nameInput = document.getElementById("name");
@@ -120,17 +120,18 @@ form.addEventListener("submit", (event) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      mode: "no-cors",
       body: JSON.stringify(formData),
     })
       .then((fetchResponse) => {
         console.log(fetchResponse);
+      })
+      .catch((fetchError) => console.log(fetchError))
+      .finally(() => {
         form.reset();
         successMessage.style.display = "block";
         setTimeout(() => {
           successMessage.style.display = "none";
         }, 6000);
-      })
-      .catch((fetchError) => console.log(fetchError));
+      });
   }
 });
